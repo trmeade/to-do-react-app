@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NewTodoForm } from "./NewTodoForm";
+import { TodoList } from "./TodoList";
 
 export default function App() {
   const [todos, setTodos] = useState(() => {
@@ -29,13 +30,17 @@ export default function App() {
   }
 
   function deleteTodo() {
-    
+
   }
 
   return (
     <>
-      <NewTodoForm onSubmit={addTodo} />
-
+      <div>
+        <NewTodoForm onSubmit={addTodo} />
+      </div>
+      <div>
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      </div>
     </>
   )
 }
