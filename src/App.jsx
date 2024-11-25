@@ -7,6 +7,8 @@ export default function App() {
     
     if(localValue == null) 
       return [];
+
+    return JSON.parse(localValue);
   });
 
   useEffect(() => {
@@ -20,6 +22,14 @@ export default function App() {
         { id: crypto.randomUUID(), todoName, completed: false },
       ]
     })
+  }
+
+  function toggleTodo() {
+
+  }
+
+  function deleteTodo() {
+    
   }
 
   return (
