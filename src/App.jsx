@@ -4,6 +4,10 @@ import { TodoList } from "./TodoList";
 import "./styles.css";
 
 export default function App() {
+  const [showActive, setShowActive] = useState(true);
+  const [showCompleted, setShowCompleted] = useState(true);
+  const [showDeleted, setShowDeleted] = useState(true);
+
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
     localStorage.clear();
@@ -13,6 +17,8 @@ export default function App() {
 
     return JSON.parse(localValue);
   });
+
+
 
   useEffect(() => {
     localStorage.setItem("ITEMS", JSON.stringify(todos))
@@ -44,9 +50,10 @@ export default function App() {
         if(todo.id === id) {
           return {...todo, deleted}
         }
+
         return todo;
       });
-    })
+    });
   }
 
   return (
@@ -55,7 +62,17 @@ export default function App() {
         <NewTodoForm onSubmit={addTodo} />
       </div>
       <div>
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <TodoList 
+        todos={todos} 
+        toggleTodo={toggleTodo} 
+        deleteTodo={deleteTodo} 
+        showActive={showActive}
+        showCompleted={showCompleted}
+        showDeleted={showDeleted}
+        setShowActive={setShowActive}
+        setShowCompleted={setShowCompleted}
+        setShowDeleted={setShowDeleted}
+      />
       </div>
     </>
   )
