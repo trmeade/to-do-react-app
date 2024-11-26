@@ -1,5 +1,5 @@
 import { TodoItem } from "./TodoItem"
-
+import { TodoViewStatusBar } from "./TodoViewStatusBar";
 export function TodoList({ todos, toggleTodo, deleteTodo }) {
   //FROG TRM - Need to define these to eliminate eslint rules
   //violations
@@ -8,6 +8,7 @@ export function TodoList({ todos, toggleTodo, deleteTodo }) {
   // }
   
   return (
+    <>
     <ul className="to-do-list">
       {todos.length === 0 && "No Todos"}
       {todos.map(todo => {
@@ -21,5 +22,7 @@ export function TodoList({ todos, toggleTodo, deleteTodo }) {
         )
       })}
     </ul>
+    <TodoViewStatusBar/>    
+    </>
   )
 }
