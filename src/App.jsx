@@ -4,6 +4,9 @@ import { TodoList } from "./TodoList";
 import "./styles.css";
 
 export default function App() {
+
+  //FROG TRM - Next step is to move these down to TodoList since it will 
+  //become a sub-view that will swap on and off with Contact form.
   const [showActive, setShowActive] = useState(true);
   const [showCompleted, setShowCompleted] = useState(true);
   const [showDeleted, setShowDeleted] = useState(true);
@@ -17,8 +20,6 @@ export default function App() {
 
     return JSON.parse(localValue);
   });
-
-
 
   useEffect(() => {
     localStorage.setItem("ITEMS", JSON.stringify(todos))
