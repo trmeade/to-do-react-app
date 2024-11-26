@@ -20,6 +20,10 @@
   align-items: center;
 }
 
+.to-do-list-item-deleted {
+  text-decoration-line: line-through;
+}
+
 .delete-btn {
   margin-left: 1rem;
 }

@@ -6,6 +6,7 @@ import "./styles.css";
 export default function App() {
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
+    localStorage.clear();
     
     if(localValue == null) 
       return [];
@@ -21,7 +22,7 @@ export default function App() {
     setTodos(currentTodos => {
       return [
         ...currentTodos,
-        { id: crypto.randomUUID(), todoName, completed: false },
+        { id: crypto.randomUUID(), todoName, completed: false, deleted: false },
       ]
     });
   }
@@ -32,16 +33,20 @@ export default function App() {
         if (todo.id === id) {
           return { ...todo, completed }
         }
-
-        return todo
+        return todo;
       });
     })
   }
 
-  function deleteTodo(id) {
+  function deleteTodo(id, deleted) {
     setTodos(currentTodos => {
-      return currentTodos.filter(todo => todo.id !== id)
-    });
+      return currentTodos.map(todo => {
+        if(todo.id === id) {
+          return {...todo, deleted}
+        }
+        return todo;
+      });
+    })
   }
 
   return (
