@@ -1,0 +1,25 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.to-do-list {
+  margin-top: 1rem;
+  padding: 0;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 50%;
+}
+
+.to-do-list-item {
+  display: flex;
+  gap: 0.25rem;
+  cursor: pointer;
+  align-items: center;
+}
+
+.delete-btn {
+  margin-left: 1rem;
+}

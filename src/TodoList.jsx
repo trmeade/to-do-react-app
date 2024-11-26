@@ -1,8 +1,14 @@
 import { TodoItem } from "./TodoItem"
 
 export function TodoList({ todos, toggleTodo, deleteTodo }) {
+  //FROG TRM - Need to define these to eliminate eslint rules
+  //violations
+  // TodoList.propTypes = {
+    
+  // }
+  
   return (
-    <ul className="list">
+    <ul className="to-do-list">
       {todos.length === 0 && "No Todos"}
       {todos.map(todo => {
         return (
