@@ -3,7 +3,7 @@ export function ContactForm() {
 
   return (
     <>
-      This is the Contact Form
+      <h1>Contact Form</h1>
     </>
   )
 }

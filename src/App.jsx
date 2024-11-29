@@ -1,19 +1,31 @@
 import { Navbar } from "./Navbar";
 import { TodoList } from "./TodoList";
-// import { ContactForm } from "./ContactForm";
-//import { AboutPage } from "./AboutPage";
-import "./styles.css";
+import { ContactForm } from "./ContactForm";
+import { AboutForm } from "./AboutForm";
+
+//import { Route, Routes } from "react-router-dom";
 
 export default function App() {
- 
+
+  let component 
+  switch(window.location.pathname) {
+    case "/":
+      component = <TodoList />;
+      break;
+    case "/ContactForm":
+      component = <ContactForm />;
+      break;
+    case "/AboutForm":
+      component = <AboutForm />;
+      break;
+  }
+
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
-      <div>
-        <TodoList/>
-      </div>
+      <Navbar />
+      <div className="container">
+        {component}
+      </div>  
     </>
   )
 }
