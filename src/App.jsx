@@ -1,4 +1,6 @@
+import { Navbar } from "./Navbar";
 import { TodoList } from "./TodoList";
+// import { ContactForm } from "./ContactForm";
 import "./styles.css";
 
 export default function App() {
@@ -6,8 +8,10 @@ export default function App() {
   return (
     <>
       <div>
-      <TodoList 
-      />
+        <Navbar />
+      </div>
+      <div>
+        <TodoList/>
       </div>
     </>
   )
