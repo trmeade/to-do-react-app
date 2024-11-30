@@ -1,4 +1,5 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export function Navbar() {
 
@@ -24,4 +25,9 @@ function CustomLink({ to, children, ...props }) {
       <Link to={to} {...props}>{children}</Link>
     </li>
   )
+}
+
+CustomLink.propTypes = {
+  to: PropTypes.string,
+  children: PropTypes.string
 }
