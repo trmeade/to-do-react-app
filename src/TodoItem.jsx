@@ -14,7 +14,7 @@ export function TodoItem({ completed, id, todoName, toggleTodo, deleteTodo}) {
         {todoName}
         </span>
         <button onClick={() => deleteTodo(id, true)} className="delete-btn">
-        <Trash size={15} />
+        <Trash size={15} color={"red"} />
         </button>
       </div>
     </>
