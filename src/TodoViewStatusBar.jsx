@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 
 export function TodoViewStatusBar({
   viewStatus,
@@ -46,6 +46,7 @@ export function TodoViewStatusBar({
   )
 
   function setActiveBtn(status) {
+    
     setViewStatus(status);
 
     document.getElementById("all-btn").classList.remove("view-type-btn-active");
@@ -66,4 +67,9 @@ export function TodoViewStatusBar({
         break;
     }
   }
+}
+
+TodoViewStatusBar.propTypes = {
+  viewStatus: PropTypes.string,
+  setViewStatus: PropTypes.func,
 }

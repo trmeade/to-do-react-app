@@ -5,18 +5,18 @@ import { TodoViewStatusBar } from "./TodoViewStatusBar";
 
 export function TodoList() 
 {
-  //FROG TRM - Need to define these to eliminate eslint rules
-  //violations
-  // TodoList.propTypes = {
-  // }
+  const [viewStatus, setViewStatus] = useState(() => {
+    const localValue = localStorage.getItem("VIEW-STATUS");
+   
+    if(localValue == null) 
+      return "All";
 
-  const [viewStatus, setViewStatus] = useState("All");
+    return localValue;
+  });
  
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
    
-    //localStorage.clear();
-
     if(localValue == null) 
       return [];
 
@@ -24,8 +24,9 @@ export function TodoList()
   });
 
   useEffect(() => {
-    localStorage.setItem("ITEMS", JSON.stringify(todos))
-  }, [todos]);
+    localStorage.setItem("ITEMS", JSON.stringify(todos));
+    localStorage.setItem("VIEW-STATUS", viewStatus);
+  }, [todos, viewStatus]);
 
   function addTodo(todoName) {
     setTodos(currentTodos => {
