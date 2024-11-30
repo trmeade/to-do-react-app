@@ -9,7 +9,6 @@ export function TodoViewStatusBar({
 
   return (
     <>
-      {/* <span>View Status = {viewStatus}</span> */}
       <div className="todo-view-status-bar">
         <h4>Show:</h4>
         <span className="status-bar-row">
