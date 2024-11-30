@@ -15,7 +15,7 @@ export function TodoList()
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
    
-    localStorage.clear();
+    //localStorage.clear();
 
     if(localValue == null) 
       return [];
