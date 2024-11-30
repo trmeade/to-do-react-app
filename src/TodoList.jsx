@@ -15,7 +15,7 @@ export function TodoList()
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
    
-    //localStorage.clear();
+    localStorage.clear();
 
     if(localValue == null) 
       return [];
@@ -25,13 +25,13 @@ export function TodoList()
 
   useEffect(() => {
     localStorage.setItem("ITEMS", JSON.stringify(todos))
-  }, [todos])
+  }, [todos]);
 
   function addTodo(todoName) {
     setTodos(currentTodos => {
       return [
         ...currentTodos,
-        { id: crypto.randomUUID(), todoName, completed: false, deleted: false },
+        { id: crypto.randomUUID(), todoName, completed: false },
       ]
     });
   }
@@ -47,16 +47,13 @@ export function TodoList()
     })
   }
 
-  function deleteTodo(id, deleted) {
+  function deleteTodo(id) {
+    
     setTodos(currentTodos => {
-      return currentTodos.map(todo => {
-        if(todo.id === id) {
-          return {...todo, deleted}
-        }
-
-        return todo;
-      });
-    });
+      return currentTodos.filter((todo) => {
+        return todo.id !== id;
+      })
+    })
   }
 
   return (
@@ -67,19 +64,12 @@ export function TodoList()
       <ul className="to-do-list">
         {todos.length === 0 && "No Todos"}
         {todos.map(todo => {
-          let show = false;
-        
-          console.log(`evaluating todo: ${JSON.stringify(todo, null, 4)}`);
+          //let show = true;
 
-          if(viewStatus === "All") {
-            show = true;
-          } else if(viewStatus === "Active" && todo.completed === false) {
-            show = true;
-          } else if(viewStatus === "Completed" && todo.completed === true) {
-            show = true;
-          }
-    
-          if(show) {
+          if(viewStatus === "All" || 
+            (viewStatus === "Active" && todo.completed !== true) || 
+            (viewStatus === "Completed" && todo.completed !== false)
+          ) {
             return (
               <TodoItem
                 {...todo}
@@ -89,9 +79,8 @@ export function TodoList()
               />     
             )
           }
-          else {
-            console.log(`Not showing todo: ${JSON.stringify(todo, null, 4)}`);
-          }
+
+          //console.log(`Not showing todo: ${JSON.stringify(todo, null, 4)}`);
         })}
       </ul>
       <TodoViewStatusBar 

@@ -71,10 +71,6 @@ html {
   align-items: center;
 }
 
-.to-do-list-item-deleted {
-  text-decoration-line: line-through;
-}
-
 .todo-view-status-bar {
   padding-top: 1rem;
 }

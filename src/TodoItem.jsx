@@ -1,11 +1,5 @@
 
-export function TodoItem({ completed, deleted, id, todoName, toggleTodo, deleteTodo}) {
-
-  function deleteStatus() {
-    const retStr = deleted ? "to-do-list-item-deleted" : "";
-    return retStr;
-  }
-  
+export function TodoItem({ completed, id, todoName, toggleTodo, deleteTodo}) {
   return (
     <>
       <div>     
@@ -14,7 +8,7 @@ export function TodoItem({ completed, deleted, id, todoName, toggleTodo, deleteT
           checked={completed}
           onChange={e => toggleTodo(id, e.target.checked)}
         />
-        <span className={deleteStatus()}>
+        <span>
         {todoName}
         </span>
         <button onClick={() => deleteTodo(id, true)} className="delete-btn">
