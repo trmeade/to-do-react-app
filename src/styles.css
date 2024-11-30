@@ -75,6 +75,28 @@ html {
   text-decoration-line: line-through;
 }
 
+.todo-view-status-bar {
+  padding-top: 1rem;
+}
+
+.add-todo-btn {
+  background-color: lightgray;
+  margin-left: .5rem;
+  padding: .25rem;
+}
+
+.view-type-btn {
+  background-color: lightgray;
+  color: black;
+  font-size: .75rem;
+  padding: .25rem;
+  border-radius: 5px; */
+}
+
+.view-type-btn-active {
+  background-color: blue;
+  color: white;
+}
 .delete-btn {
   margin-left: 1rem;
 }

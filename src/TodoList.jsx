@@ -9,14 +9,14 @@ export function TodoList()
   //violations
   // TodoList.propTypes = {
   // }
-  const [showActive, setShowActive] = useState(true);
-  const [showCompleted, setShowCompleted] = useState(true);
-  const [showDeleted, setShowDeleted] = useState(true);
 
+  const [viewStatus, setViewStatus] = useState("All");
+ 
   const [todos, setTodos] = useState(() => {
     const localValue = localStorage.getItem("ITEMS");
+   
     //localStorage.clear();
-    
+
     if(localValue == null) 
       return [];
 
@@ -67,23 +67,18 @@ export function TodoList()
       <ul className="to-do-list">
         {todos.length === 0 && "No Todos"}
         {todos.map(todo => {
-          let show = true;
+          let show = false;
         
-          console.log("Render to-do-list: ")
-          console.log(`   showCompleted = ${showCompleted}`);
-          console.log(`   showDeleted = ${showDeleted}`);
-          console.log(`   showActive = ${showActive}`);
-
           console.log(`evaluating todo: ${JSON.stringify(todo, null, 4)}`);
 
-          if(!todo.completed && !showActive) {
-            show = false;
-          } else if(todo.completed && !showCompleted) {
-            show = false;
-          } else if(todo.deleted && !showDeleted) {
-            show = false;
+          if(viewStatus === "All") {
+            show = true;
+          } else if(viewStatus === "Active" && todo.completed === false) {
+            show = true;
+          } else if(viewStatus === "Completed" && todo.completed === true) {
+            show = true;
           }
-          
+    
           if(show) {
             return (
               <TodoItem
@@ -100,12 +95,8 @@ export function TodoList()
         })}
       </ul>
       <TodoViewStatusBar 
-        showActive={showActive}
-        showCompleted={showCompleted}
-        showDeleted={showDeleted}
-        setShowActive={setShowActive}
-        setShowCompleted={setShowCompleted}
-        setShowDeleted={setShowDeleted}
+        viewStatus={viewStatus}
+        setViewStatus={setViewStatus}
       />    
     </>
   )

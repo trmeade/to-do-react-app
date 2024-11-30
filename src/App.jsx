@@ -6,19 +6,6 @@ import { Route, Routes } from "react-router-dom";
 
 export default function App() {
 
-  // let component 
-  // switch(window.location.pathname) {
-  //   case "/":
-  //     component = <TodoList />;
-  //     break;
-  //   case "/ContactForm":
-  //     component = <ContactForm />;
-  //     break;
-  //   case "/AboutForm":
-  //     component = <AboutForm />;
-  //     break;
-  // }
-
   return (
     <>
       <Navbar />

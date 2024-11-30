@@ -23,7 +23,7 @@ export function NewTodoForm({ onSubmit }) {
           type="text"
           placeholder="Task..."
         />
-        <button>Add</button>
+        <button className="add-todo-btn">Add</button>
       </div>
     </form>
   )
