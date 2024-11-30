@@ -6,7 +6,6 @@ export function TodoViewStatusBar({
 })       
 {
 
-
   return (
     <>
       <div className="todo-view-status-bar">
