@@ -1,3 +1,4 @@
+import { Trash } from 'react-bootstrap-icons';
 import PropTypes from "prop-types";
 
 export function TodoItem({ completed, id, todoName, toggleTodo, deleteTodo}) {
@@ -13,7 +14,7 @@ export function TodoItem({ completed, id, todoName, toggleTodo, deleteTodo}) {
         {todoName}
         </span>
         <button onClick={() => deleteTodo(id, true)} className="delete-btn">
-        Delete
+        <Trash size={15} />
         </button>
       </div>
     </>
