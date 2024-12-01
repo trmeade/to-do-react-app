@@ -4,8 +4,7 @@ export function ContactForm() {
   return (
     <>
       <h1 id="contact">Contact</h1>
-      {/* <form action="https://formspree.io/f/xldeeoyq" method="POST"> */}
-      <form className="contact-form" action="" method="">
+      <form action="https://formspree.io/f/xldeeoyq" method="POST">
         <div className="form-row">
           <input className="form-input"
             required
