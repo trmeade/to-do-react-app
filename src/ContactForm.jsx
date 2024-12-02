@@ -4,12 +4,12 @@ export function ContactForm() {
   return (
     <>
       <h1 id="contact">Contact</h1>
-      <form action="https://formspree.io/f/xldeeoyq" method="POST">
+      <form onSubmit={onSubmit}>
         <div className="form-row">
           <input className="form-input"
             required
             type="text"
-            name="first-name"
+            name="firstName"
             id="first-name"
             placeholder="First Name"
           />
@@ -18,7 +18,7 @@ export function ContactForm() {
           <input className="form-input"
             required
             type="text"
-            name="last-name"
+            name="lastName"
             id="last-name"
             placeholder="Last Name"
           />
@@ -48,4 +48,15 @@ export function ContactForm() {
       </form>
     </>
   )
+
+  function onSubmit(event) {
+    event.preventDefault();
+    console.log("onSubmit() called");
+    console.log(`First Name: ${event.target.firstName.value}`);
+    console.log(`Last Name: ${event.target.lastName.value}`);
+    console.log(`Email: ${event.target.email.value}`);
+    console.log(`Message: ${event.target.message.value}`);
+    alert('Form submitted');
+    // <form action="https://formspree.io/f/xldeeoyq" method="POST"></form>
+  }
 }

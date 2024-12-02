@@ -1,33 +1,10 @@
-import { useEffect, useState } from "react";
 import { NewTodoForm } from "./NewTodoForm";
 import { TodoItem } from "./TodoItem"
 import { TodoViewStatusBar } from "./TodoViewStatusBar";
+import PropTypes from "prop-types";
 
-export function TodoList() 
+export function TodoList({ todos, setTodos, viewStatus, setViewStatus }) 
 {
-  const [viewStatus, setViewStatus] = useState(() => {
-    const localValue = localStorage.getItem("VIEW-STATUS");
-   
-    if(localValue == null) 
-      return "All";
-
-    return localValue;
-  });
- 
-  const [todos, setTodos] = useState(() => {
-    const localValue = localStorage.getItem("ITEMS");
-   
-    if(localValue == null) 
-      return [];
-
-    return JSON.parse(localValue);
-  });
-
-  useEffect(() => {
-    localStorage.setItem("ITEMS", JSON.stringify(todos));
-    localStorage.setItem("VIEW-STATUS", viewStatus);
-  }, [todos, viewStatus]);
-
   function addTodo(todoName) {
     setTodos(currentTodos => {
       return [
@@ -90,4 +67,11 @@ export function TodoList()
       />    
     </>
   )
+}
+
+TodoList.propTypes = {
+  todos: PropTypes.array,
+  setTodos: PropTypes.func,
+  viewStatus: PropTypes.string,
+  setViewStatus: PropTypes.func
 }
