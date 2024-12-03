@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 export function NewTodoForm({ onSubmit }) {
-  const [newItem, setNewwItem] = useState("");
+  const [newItem, setNewItem] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -12,7 +12,7 @@ export function NewTodoForm({ onSubmit }) {
 
     onSubmit(newItem);
 
-    setNewwItem("");
+    setNewItem("");
   }
 
   return (
@@ -21,7 +21,7 @@ export function NewTodoForm({ onSubmit }) {
           <div id="new-to-do-header">Create New Todo:</div>
           <input id="new-todo-input"
             value={newItem}
-            onChange={e => setNewwItem(e.target.value)}
+            onChange={e => setNewItem(e.target.value)}
             type="text"
             placeholder="New todo..."
           />
