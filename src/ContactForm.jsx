@@ -46,17 +46,26 @@ export function ContactForm() {
           <input className="btn" type="submit" value="Submit"/>
         </div>
       </form>
+      <dialog className="modal" id="result-dialog">
+      <div className="modal-content">
+        <span id="modal-close" onClick={displayClose}>&times;</span>
+      </div>
+      <div id="modal-content">
+        <p id="modal-message"></p>
+      </div>
+    </dialog>
     </>
   )
 
   function onSubmit(event) {
     event.preventDefault();
-    // console.log("onSubmit() called");
-    // console.log(`First Name: ${event.target.firstName.value}`);
-    // console.log(`Last Name: ${event.target.lastName.value}`);
-    // console.log(`Email: ${event.target.email.value}`);
-    // console.log(`Message: ${event.target.message.value}`);
-    
+
+    // This is how you access the form input fields:
+      // event.target.firstName.value
+      // event.target.lastName.value
+      // event.target.email.value
+      // event.target.message.value
+
     const url = "https://formspree.io/f/xldeeoyq";
     const data = new FormData(event.target);
     console.log(`onSubmit() data: ${JSON.stringify(data, null, 4)}`);
@@ -70,10 +79,26 @@ export function ContactForm() {
                 }
     ).then(() => {
       console.log(`submit success`);
-      //Open the modal dialog
+      displayResult("success");
     }).catch((err) => {
       console.log(`submit error: ${JSON.stringify(err, null, 4)}`);
-      //Show an error modal dialog
+      displayResult("failed", err);
     })
+  }
+
+  function displayResult(result, err) {
+    
+    const msg = document.getElementById("modal-message");
+    msg.innerHTML = result === "success" ? 
+                                 "Your message was submitted." :
+                                 `Submission failed: ${JSON.stringify(err, null, 4)}`;
+
+    const dlg = document.getElementById("result-dialog");
+    dlg.showModal();
+  }
+  
+  function displayClose() {
+    const dlg = document.getElementById("result-dialog");
+    dlg.close();
   }
 }

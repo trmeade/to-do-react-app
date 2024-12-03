@@ -106,3 +106,28 @@ html {
   width: 50%;
 }
 
+.modal {
+  position: relative; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 20px; /* Location of the box */
+  padding-left: 10px;
+  font-size: 16px;
+  width: 75%;
+  height: 15%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: white;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 100%;
+}
+
+#modal-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
