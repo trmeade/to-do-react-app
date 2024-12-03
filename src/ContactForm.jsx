@@ -4,7 +4,7 @@ export function ContactForm() {
   return (
     <>
       <h1 id="contact">Contact</h1>
-      <form onSubmit={onSubmit}>
+      <form action="https://formspree.io/f/xldeeoyq" method="POST" onSubmit={onSubmit}>
         <div className="form-row">
           <input className="form-input"
             required
@@ -51,12 +51,29 @@ export function ContactForm() {
 
   function onSubmit(event) {
     event.preventDefault();
-    console.log("onSubmit() called");
-    console.log(`First Name: ${event.target.firstName.value}`);
-    console.log(`Last Name: ${event.target.lastName.value}`);
-    console.log(`Email: ${event.target.email.value}`);
-    console.log(`Message: ${event.target.message.value}`);
-    alert('Form submitted');
-    // <form action="https://formspree.io/f/xldeeoyq" method="POST"></form>
+    // console.log("onSubmit() called");
+    // console.log(`First Name: ${event.target.firstName.value}`);
+    // console.log(`Last Name: ${event.target.lastName.value}`);
+    // console.log(`Email: ${event.target.email.value}`);
+    // console.log(`Message: ${event.target.message.value}`);
+    
+    const url = "https://formspree.io/f/xldeeoyq";
+    const data = new FormData(event.target);
+    console.log(`onSubmit() data: ${JSON.stringify(data, null, 4)}`);
+
+    fetch(url, { 
+                 method: 'POST', 
+                 body: data,
+                 headers: {
+                  'Accept': 'application/json'
+                 }
+                }
+    ).then(() => {
+      console.log(`submit success`);
+      //Open the modal dialog
+    }).catch((err) => {
+      console.log(`submit error: ${JSON.stringify(err, null, 4)}`);
+      //Show an error modal dialog
+    })
   }
 }
