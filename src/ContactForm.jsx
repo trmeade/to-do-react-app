@@ -68,8 +68,7 @@ export function ContactForm() {
 
     const url = "https://formspree.io/f/xldeeoyq";
     const data = new FormData(event.target);
-    console.log(`onSubmit() data: ${JSON.stringify(data, null, 4)}`);
-
+  
     fetch(url, { 
                  method: 'POST', 
                  body: data,
@@ -78,10 +77,8 @@ export function ContactForm() {
                  }
                 }
     ).then(() => {
-      console.log(`submit success`);
       displayResult("success");
     }).catch((err) => {
-      console.log(`submit error: ${JSON.stringify(err, null, 4)}`);
       displayResult("failed", err);
     })
   }
