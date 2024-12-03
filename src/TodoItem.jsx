@@ -2,20 +2,22 @@ import { Trash } from 'react-bootstrap-icons';
 import PropTypes from "prop-types";
 
 export function TodoItem({ completed, id, todoName, toggleTodo, deleteTodo}) {
+ 
   return (
     <>
-      <div>     
+      <div className="todo-item-row">
         <input
           type="checkbox"
           checked={completed}
-          onChange={e => toggleTodo(id, e.target.checked)}
-        />
-        <span>
-        {todoName}
+          onChange={e => toggleTodo(id, e.target.checked)}>
+          
+        </input>
+        <span className="todo-name">
+          {todoName}
+        </span>  
+        <span className="delete-button" onClick={() => deleteTodo(id, true)}>
+          <Trash id="trash-icon" size={15} color={"red"} />
         </span>
-        <button onClick={() => deleteTodo(id, true)} className="delete-btn">
-        <Trash size={15} color={"red"} />
-        </button>
       </div>
     </>
   )

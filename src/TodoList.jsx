@@ -36,9 +36,7 @@ export function TodoList({ todos, setTodos, viewStatus, setViewStatus })
 
   return (
     <>
-      <div>
-        <NewTodoForm onSubmit={addTodo} />
-      </div>
+      <NewTodoForm onSubmit={addTodo} />
       <ul className="to-do-list">
         {todos.length === 0 && "No Todos"}
         {todos.map(todo => {
@@ -57,14 +55,12 @@ export function TodoList({ todos, setTodos, viewStatus, setViewStatus })
               />     
             )
           }
-
-          //console.log(`Not showing todo: ${JSON.stringify(todo, null, 4)}`);
         })}
       </ul>
       <TodoViewStatusBar 
         viewStatus={viewStatus}
         setViewStatus={setViewStatus}
-      />    
+      />   
     </>
   )
 }

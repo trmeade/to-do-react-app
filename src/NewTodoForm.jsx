@@ -16,16 +16,17 @@ export function NewTodoForm({ onSubmit }) {
   }
 
   return (
-    <form onSubmit= { handleSubmit } className="new-item-form">
-        <div className="form-row">
-        <input
-          value={newItem}
-          onChange={e => setNewwItem(e.target.value)}
-          type="text"
-          placeholder="Task..."
-        />
-        <button className="add-todo-btn">Add</button>
-      </div>
+    <form id="new-todo-form" onSubmit= { handleSubmit }>
+        <span>
+          <div id="new-to-do-header">Create New Todo:</div>
+          <input id="new-todo-input"
+            value={newItem}
+            onChange={e => setNewwItem(e.target.value)}
+            type="text"
+            placeholder="New todo..."
+          />
+          <button className="new-todo-btn">Add</button>
+      </span>
     </form>
   )
 }

@@ -3,57 +3,59 @@ export function ContactForm() {
 
   return (
     <>
-      <h1 id="contact">Contact</h1>
-      <form action="https://formspree.io/f/xldeeoyq" method="POST" onSubmit={onSubmit}>
-        <div className="form-row">
-          <input className="form-input"
-            required
-            type="text"
-            name="firstName"
-            id="first-name"
-            placeholder="First Name"
-          />
+      <div id="contact-submission-form">  
+        <form action="https://formspree.io/f/xldeeoyq" method="POST" onSubmit={onSubmit}>
+          <div id="contact-form-header">Contact Submission Form:</div>
+          <div className="form-row">
+            <input className="form-input"
+              required
+              type="text"
+              name="firstName"
+              id="first-name"
+              placeholder="First Name"
+            />
+          </div>
+          <div className="form-row">
+            <input className="form-input"
+              required
+              type="text"
+              name="lastName"
+              id="last-name"
+              placeholder="Last Name"
+            />
+          </div>
+          <div className="form-row">
+            <input className="form-input"
+              required
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+            />
+          </div>
+          <div className="form-row">
+            <textarea className="form-input"
+              required
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="What would you like to say?"
+            ></textarea>
+          </div>
+          <div className="form-row">
+            <input className="submit-btn" type="submit" value="Submit"/>
+          </div>
+        </form>
+        <dialog className="modal" id="result-dialog">
+        <div className="modal-content">
+          <span id="modal-close" onClick={displayClose}>&times;</span>
         </div>
-        <div className="form-row">
-          <input className="form-input"
-            required
-            type="text"
-            name="lastName"
-            id="last-name"
-            placeholder="Last Name"
-          />
+        <div id="modal-content">
+          <p id="modal-message"></p>
         </div>
-        <div className="form-row">
-          <input className="form-input"
-            required
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email"
-          />
-        </div>
-        <div className="form-row">
-          <textarea className="form-input"
-            required
-            name="message"
-            id="message"
-            cols="30"
-            rows="10"
-            placeholder="What would you like to say?"
-          ></textarea>
-        </div>
-        <div className="form-row">
-          <input className="btn" type="submit" value="Submit"/>
-        </div>
-      </form>
-      <dialog className="modal" id="result-dialog">
-      <div className="modal-content">
-        <span id="modal-close" onClick={displayClose}>&times;</span>
-      </div>
-      <div id="modal-content">
-        <p id="modal-message"></p>
-      </div>
-    </dialog>
+      </dialog>
+    </div>
     </>
   )
 

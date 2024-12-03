@@ -9,7 +9,7 @@ export function TodoViewStatusBar({
   return (
     <>
       <div className="todo-view-status-bar">
-        <p>Show:</p>
+        <p id="view-state-header">Select View:</p>
           <div id="view-state-buttons">
             <button 
               className={`view-type-btn ${viewStatus === "All" ? "view-type-btn-active" : ""}`}

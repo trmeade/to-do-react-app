@@ -15,6 +15,10 @@ html {
   padding-left: 1rem;
 }
 
+#new-todo-form-section {
+  justify-items: center;
+}
+
 .nav {
   background-color: #333;
   color: white;
@@ -50,60 +54,115 @@ html {
   background-color: #777;
 }
 
-.new-item-form {
-  margin-top: 1rem;
+#todo-list-section {
+  justify-items: center;
+}
+
+#new-todo-form {
+  margin-top: .5rem;
+  
+}
+
+#new-to-do-header {
+  font-size: 1rem;
+}
+
+#new-todo-input {
+  margin-top: .25rem;
+  height: 1.5rem;
+  width: 40%;
+}
+
+.new-todo-btn {
+  background-color: #333;
+  color: white;
+  margin-left: .25rem;
+  width: 20%;
+  height: 1.5rem;
+}
+
+.about-page {
+  justify-items: center;
+}
+
+.about-header {
+  font-size: 1rem;
+  font-weight: bold;
+  padding-bottom: 1rem;
 }
 
 .to-do-list {
   margin-top: 1rem;
   padding: 0;
-  margin-left: 1rem;
+  margin-left: 0.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  width: 50%;
+  width: 100%;
 }
 
-.to-do-list-item {
-  display: flex;
-  gap: 0.25rem;
-  cursor: pointer;
-  align-items: center;
+.todo-item-row {
+  background-color: rgb(230, 232, 233);
+  width: 60%
+}
+
+.todo-name {
+  margin-left: .25rem;
+  font-size: .90rem;
+}
+
+.delete-button {
+  float: right ;
+  margin-right: .5rem;
 }
 
 .todo-view-status-bar {
   padding-top: 1rem;
 }
 
-.add-todo-btn {
-  background-color: lightgray;
-  margin-left: .5rem;
-  padding: .25rem;
+#view-state-header {
+  font-size: 1rem;
+  padding-bottom: .25rem;
 }
 
 .view-type-btn {
-  background-color: lightgray;
-  color: black;
+  background-color: #333;
+  color: white;
   font-size: .75rem;
-  padding: .25rem;
-  border-radius: 5px;
+  padding: .3rem;
+  margin: .05rem;
+  border-radius: 0px;
+  height: 2rem;
+  width: 20%;
 }
 
 .view-type-btn-active {
   background-color: blue;
   color: white;
 }
-.delete-btn {
-  margin-left: 1rem;
-}
 
 .status-bar-row {
   margin: 1rem;
 }
 
+#contact-form-header {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: .5rem;
+}
+
 .form-input {
-  margin: .25rem;
-  width: 50%;
+  width: 75%;
+  font-size: .80rem;
+  margin: .5rem;
+}
+
+.submit-btn {
+  background-color: #333;
+  color: white;
+  margin-left: .50rem;
+  width: 20%;
+  height: 1.5rem;
 }
 
 .modal {
