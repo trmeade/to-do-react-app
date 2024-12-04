@@ -4,7 +4,7 @@ export function ContactForm() {
   return (
     <>
       <div id="contact-submission-form">  
-        <form action="https://formspree.io/f/xldeeoyq" method="POST" onSubmit={onSubmit}>
+        <form id="contact-form" action="https://formspree.io/f/xldeeoyq" method="POST" onSubmit={onSubmit}>
           <div id="contact-form-header">Contact Submission Form:</div>
           <div className="form-row">
             <input className="form-input"
@@ -80,6 +80,7 @@ export function ContactForm() {
                 }
     ).then(() => {
       displayResult("success");
+      clearForm();
     }).catch((err) => {
       displayResult("failed", err);
     })
@@ -99,5 +100,9 @@ export function ContactForm() {
   function displayClose() {
     const dlg = document.getElementById("result-dialog");
     dlg.close();
+  }
+
+  function clearForm() {
+    document.getElementById("contact-form").reset();
   }
 }
