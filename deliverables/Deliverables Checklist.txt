@@ -1,0 +1,25 @@
+// - Setup Github Pages instance with node
+
+Deliverables Checklist
+
+1 - At least 3 User stories (DONE)
+
+2 - GitHub Repo (DONE)
+
+3 - README.md file (DONE)
+
+4 - Wireframes (Todo, About, Contact) (DONE)
+
+5 - List of components (DONE)
+
+5 - Application View States Diagram (DONE)
+
+6 - Deploy to GitHub Pages
+
+
+
+
+
+
+
+	

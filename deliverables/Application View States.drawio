@@ -1,0 +1,52 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram name="Page-1" id="yMfAWnZXDRuGaaDiaQWR">
+    <mxGraphModel dx="1114" dy="808" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WnfQ-naqz2gReAEOUUrO-1" target="WnfQ-naqz2gReAEOUUrO-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="WnfQ-naqz2gReAEOUUrO-1" target="WnfQ-naqz2gReAEOUUrO-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="WnfQ-naqz2gReAEOUUrO-1" target="WnfQ-naqz2gReAEOUUrO-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-1" value="Todo View" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
+          <mxGeometry x="30" y="143" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WnfQ-naqz2gReAEOUUrO-2" target="WnfQ-naqz2gReAEOUUrO-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-2" value="About View" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
+          <mxGeometry x="516" y="143" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="WnfQ-naqz2gReAEOUUrO-4" target="WnfQ-naqz2gReAEOUUrO-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-4" value="Contact View" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" vertex="1" parent="1">
+          <mxGeometry x="690" y="143" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-29" value="Contact Form" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+          <mxGeometry x="705" y="243" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-31" value="About Form" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+          <mxGeometry x="531" y="243" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-33" value="All Todo Items" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+          <mxGeometry x="30" y="258" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-34" value="Active Todo Items" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0a30a;fontColor=#000000;strokeColor=#BD7000;" vertex="1" parent="1">
+          <mxGeometry x="170" y="258" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-35" value="Completed Todo Items" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;" vertex="1" parent="1">
+          <mxGeometry x="310" y="258" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="WnfQ-naqz2gReAEOUUrO-45" value="Application View States" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;" vertex="1" parent="1">
+          <mxGeometry x="90" y="40" width="690" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
